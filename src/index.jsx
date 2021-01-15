@@ -1,17 +1,16 @@
+import Cursor from "./components/common/Cursor.jsx";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.jsx';
 import './index.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root'),
+	<React.StrictMode>
+		<div>Main content here <a href="https://google.com">Link</a></div>
+		<Cursor></Cursor>
+	</React.StrictMode>,
+	document.getElementById('app')
 );
 
-// Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
-// Learn more: https://www.snowpack.dev/concepts/hot-module-replacement
 if (import.meta.hot) {
-  import.meta.hot.accept();
+	import.meta.hot.accept();
 }

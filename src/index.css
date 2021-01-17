@@ -9,3 +9,17 @@ body, html {
 * {
 	cursor: none;
 }
+
+:root {
+	--theme-200: #094060;
+	--theme-400: #0e9ff0;
+	--theme-800: #e6f1ff;
+	--font-title: 'Metropolis', 'NanumBarunRoboto', sans-serif;
+	--font-sans: 'Inter', 'NanumBarunRoboto', sans-serif;
+	--font-serif: 'RIDIBatang', sans-serif;
+}
+
+::selection {
+	color: var(--theme-400);
+	/* background: rgba(0, 0, 0, .07); */
+}

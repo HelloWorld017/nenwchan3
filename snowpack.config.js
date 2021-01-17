@@ -7,7 +7,7 @@ module.exports = {
 	plugins: [
 		'@snowpack/plugin-webpack',
 		'@snowpack/plugin-react-refresh',
-		'snowpack-plugin-svgr'
+		[ 'snowpack-plugin-svgr', { include: [ 'src/components/images/**/*.svg' ] } ]
 	],
 
 	routes: [],

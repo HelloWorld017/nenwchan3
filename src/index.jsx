@@ -1,11 +1,12 @@
 import Cursor from "./components/common/Cursor.jsx";
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Main from "./pages/Main.jsx";
 import './index.css';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<div>Main content here <a href="https://google.com">Link</a></div>
+		<Main></Main>
 		<Cursor></Cursor>
 	</React.StrictMode>,
 	document.getElementById('app')

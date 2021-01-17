@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import styles from "./Cursor.module.css";
+/** @jsx jsx */
+import { useEffect, useRef } from 'react';
+import { css, jsx } from "@emotion/react";
 
 const isMobileMode = !matchMedia('(pointer:fine)').matches;
 
@@ -74,7 +75,7 @@ const Cursor = () => {
 				const opacity = (1 - life) ** 2;
 				const radius = 20 * easeOut(life);
 
-				ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+				ctx.fillStyle = `rgba(170, 170, 170, ${opacity})`;
 				ctx.beginPath();
 				ctx.arc(x, y, radius, 0, Math.PI * 2, true);
 				ctx.fill();
@@ -85,11 +86,11 @@ const Cursor = () => {
 			// Draw cursor
 			ctx.fillStyle = (cursorType === 'link') ?
 				'#00bcd4' :
-				'#fff';
-
+				'#c0c0c0';
 			ctx.beginPath();
 			ctx.arc(cursorX, cursorY, 5, 0, Math.PI * 2, true);
 			ctx.fill();
+
 			requestId = requestAnimationFrame(draw);
 		};
 
@@ -98,7 +99,19 @@ const Cursor = () => {
 	}, []);
 
 	return (
-		<canvas className={styles.Cursor} ref={canvasRef} />
+		<canvas
+			css={css`
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 100vw;
+				height: 100vh;
+				pointer-events: none;
+			`}
+			ref={canvasRef}
+		/>
 	);
 };
 

@@ -5,8 +5,9 @@ module.exports = {
 	},
 
 	plugins: [
-	  '@snowpack/plugin-react-refresh',
-	  '@snowpack/plugin-postcss'
+		'@snowpack/plugin-webpack',
+		'@snowpack/plugin-react-refresh',
+		'snowpack-plugin-svgr'
 	],
 
 	routes: [],

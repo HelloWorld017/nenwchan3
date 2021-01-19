@@ -7,15 +7,13 @@ import SectionInfo from "../components/sections/SectionInfo.jsx";
 const Main = () => {
 	return (
 		<main>
-			<Carousel
-				css={css`
-					width: 100vw;
-					height: 100vh;
-				`}
-				children={
-					<SectionInfo></SectionInfo>
-				}
-			/>
+			<Carousel css={ css`
+				width: 100vw;
+				height: 100vh;
+			` }>
+				<SectionInfo></SectionInfo>
+				<SectionInfo></SectionInfo>
+			</Carousel>
 		</main>
 	);
 };

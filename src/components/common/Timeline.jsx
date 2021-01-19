@@ -40,7 +40,7 @@ const TimelineContent = ({ name, description, works = [] }) => {
 				margin-top: 15px;
 			`}> {
 				works.map(({ name, content}) => (
-					<div css={ css`
+					<div key={ name } css={ css`
 						color: #606060;
 						font-family: var(--font-sans);
 						font-weight: 600;

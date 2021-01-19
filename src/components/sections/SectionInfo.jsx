@@ -83,8 +83,10 @@ const ContactItem = styled.div`
 	}
 `;
 
-const SectionInfo = () => (
+const SectionInfo = ({ carousel }) => (
 	<Section>
+		{ carousel && carousel.prev }
+
 		<Column css={ css`
 			flex: 0 1 auto;
 		` }>
@@ -155,6 +157,8 @@ const SectionInfo = () => (
 				</Contact>
 			</ColumnItem>
 		</Column>
+
+		{ carousel && carousel.next }
 	</Section>
 );
 

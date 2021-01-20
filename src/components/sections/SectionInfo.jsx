@@ -1,6 +1,5 @@
-/** @jsx jsx */
 import styled from '@emotion/styled';
-import { css, jsx } from '@emotion/react';
+import { css } from '@emotion/react';
 import { useEffect, useRef } from 'react';
 
 import { Column, ColumnItem, Section } from './Section.jsx';
@@ -84,9 +83,7 @@ const ContactItem = styled.div`
 `;
 
 const SectionInfo = ({ carousel }) => (
-	<Section>
-		{ carousel && carousel.prev }
-
+	<Section carousel={ carousel }>
 		<Column css={ css`
 			flex: 0 1 auto;
 		` }>
@@ -157,8 +154,6 @@ const SectionInfo = ({ carousel }) => (
 				</Contact>
 			</ColumnItem>
 		</Column>
-
-		{ carousel && carousel.next }
 	</Section>
 );
 

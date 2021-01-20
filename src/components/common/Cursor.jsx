@@ -1,6 +1,5 @@
-/** @jsx jsx */
+import { css } from "@emotion/react";
 import { useEffect, useRef } from 'react';
-import { css, jsx } from "@emotion/react";
 
 const isMobileMode = !matchMedia('(pointer:fine)').matches;
 

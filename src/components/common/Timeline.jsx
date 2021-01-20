@@ -1,6 +1,5 @@
-/** @jsx jsx */
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { css, jsx } from '@emotion/react';
 
 export const Timeline = styled.div`
 

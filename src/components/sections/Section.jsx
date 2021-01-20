@@ -1,44 +1,11 @@
-/** @jsx jsx */
-import { css, jsx } from "@emotion/react";
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-
-export const Section = styled.section`
-	background: #fff;
-	display: flex;
-	flex: 1;
-	margin: 40px;
-	padding: 40px;
-
-	& > * {
-		padding: 40px;
-	}
-
-	@media (min-width: 1441px) {
-		& > * {
-			padding: 60px 80px;
-		}
-	}
-
-	@media (max-width: 1080px) {
-		flex-direction: column;
-		padding: 40px;
-
-		& > * {
-			padding: 40px 20px;
-		}
-	}
-
-	@media (max-width: 768px) {
-		margin: 20px;
-		padding: 20px;
-	}
-`;
 
 export const Column = styled.div`
 	flex: 1;
 	border-right: 1px solid #e0e0e0;
 
-	&:last-child {
+	&:last-of-type {
 		border: none;
 	}
 
@@ -75,3 +42,42 @@ export const ColumnItem = styled.div`
 		}
 	}
 `;
+
+export const Section = ({ carousel, children }) => (
+	<section css={ css`
+		background: #fff;
+		display: flex;
+		flex: 1;
+		margin: 40px;
+		padding: 40px;
+		position: relative;
+
+		& > ${Column} {
+			padding: 40px;
+		}
+
+		@media (min-width: 1441px) {
+			& > ${Column} {
+				padding: 60px 80px;
+			}
+		}
+
+		@media (max-width: 1080px) {
+			flex-direction: column;
+			padding: 40px;
+
+			& > ${Column} {
+				padding: 40px 20px;
+			}
+		}
+
+		@media (max-width: 768px) {
+			margin: 20px;
+			padding: 20px;
+		}
+	` }>
+		{ carousel && carousel.prev }
+		{ children }
+		{ carousel && carousel.next }
+	</section>
+);

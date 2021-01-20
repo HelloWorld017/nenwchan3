@@ -7,14 +7,23 @@ module.exports = {
 	plugins: [
 		'@snowpack/plugin-webpack',
 		'@snowpack/plugin-react-refresh',
-		[ 'snowpack-plugin-svgr', { include: [ 'src/components/images/**/*.svg' ] } ]
+		'@snowpack/plugin-babel',
+		[ 'snowpack-plugin-svgr', {
+			include: [ 'src/components/images/**/*.svg' ],
+			svgrOptions: { svgo: false }
+		} ]
 	],
 
 	routes: [],
 
 	optimize: {},
 
-	packageOptions: {},
+	packageOptions: {
+		knownEntrypoints: [
+			'@emotion/react/jsx-runtime',
+			'@emotion/styled/base'
+		]
+	},
 
 	devOptions: {},
 

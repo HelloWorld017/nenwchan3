@@ -1,7 +1,7 @@
 module.exports = {
 	mount: {
-		public: {url: '/', static: true},
-		src: {url: '/dist'},
+		public: { url: '/', static: true },
+		app: { url: '/dist' },
 	},
 
 	plugins: [
@@ -9,7 +9,7 @@ module.exports = {
 		'@snowpack/plugin-react-refresh',
 		'@snowpack/plugin-babel',
 		[ 'snowpack-plugin-svgr', {
-			include: [ 'src/components/images/**/*.svg' ],
+			include: [ 'app/components/images/**/*.svg' ],
 			svgrOptions: { svgo: false }
 		} ]
 	],
